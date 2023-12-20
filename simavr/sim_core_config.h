@@ -2,7 +2,7 @@
 #ifndef __SIM_CORE_CONFIG_H__
 #define __SIM_CORE_CONFIG_H__
 
-#define CONFIG_SIMAVR_VERSION "v1.7"
+#define CONFIG_SIMAVR_VERSION "unknown"
 #define CONFIG_MEGA128 1
 #define CONFIG_MEGA1280 1
 #define CONFIG_MEGA1281 1
