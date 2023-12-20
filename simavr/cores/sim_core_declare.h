@@ -21,6 +21,8 @@
 #ifndef __SIM_CORE_DECLARE_H__
 #define __SIM_CORE_DECLARE_H__
 
+#include "sim_mcu_structs.h"
+
 /* we have to declare this, as none of the distro but debian has a modern
  * toolchain and avr-libc. This affects a lot of names, like MCUSR etc
  */
@@ -102,4 +104,6 @@
 	.e2end = E2END, \
 	.vector_size = _vector_size
 #endif
+
+
 #endif /* __SIM_CORE_DECLARE_H__ */

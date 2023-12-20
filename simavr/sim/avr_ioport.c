@@ -315,10 +315,10 @@ void avr_ioport_init(avr_t * avr, avr_ioport_t * p)
 		return;
 	}
 	p->io = _io;
-//	printf("%s PIN%c 0x%02x DDR%c 0x%02x PORT%c 0x%02x\n", __FUNCTION__,
-//		p->name, p->r_pin,
-//		p->name, p->r_ddr,
-//		p->name, p->r_port);
+	printf("%s PIN%c 0x%02x DDR%c 0x%02x PORT%c 0x%02x\n", __FUNCTION__,
+		p->name, p->r_pin,
+		p->name, p->r_ddr,
+		p->name, p->r_port);
 
 	avr_register_io(avr, &p->io);
 	avr_register_vector(avr, &p->pcint);

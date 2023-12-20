@@ -37,20 +37,11 @@ static void reset(struct avr_t * avr);
 
 #include "sim_core_declare.h"
 
+#define mcu_t mcu_attiny4313_t
 /*
  * This is a template for all of the tinyx5 devices, hopefully
  */
-static const struct mcu_t {
-	avr_t core;
-	avr_eeprom_t 	eeprom;
-	avr_watchdog_t	watchdog;
-	avr_extint_t	extint;
-	avr_ioport_t	porta, portb, portd;
-	avr_uart_t		uart;
-	avr_timer_t		timer0,timer1;
-	avr_acomp_t		acomp;
-	avr_usi_t	    usi;
-} mcu = {
+const struct mcu_attiny4313_t mcu_attiny4313 = {
 	.core = {
 		.mmcu = "attiny4313",
 		DEFAULT_CORE(2),
@@ -223,7 +214,7 @@ static const struct mcu_t {
 
 static avr_t * make()
 {
-	return avr_core_allocate(&mcu.core, sizeof(struct mcu_t));
+	return avr_core_allocate(&mcu_attiny4313.core, sizeof(struct mcu_t));
 }
 
 avr_kind_t tiny4313 = {
