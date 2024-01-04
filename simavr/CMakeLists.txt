@@ -6,13 +6,15 @@ if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type (default Release)" FORCE)
 endif()
 
+#/System/Volumes/Data/opt/homebrew/Cellar/libelf/0.8.13_1/include/
+
 if(APPLE)
 message("APPLE Build")
-set(CMAKE_C_FLAGS "-funsigned-char")
+set(CMAKE_C_FLAGS "-funsigned-char -DHAVE_LIBELF -I/System/Volumes/Data/opt/homebrew/Cellar/libelf/0.8.13_1/include/ -I/System/Volumes/Data/opt/homebrew/Cellar/libelf/0.8.13_1/include/libelf/ -L/System/Volumes/Data/opt/homebrew/Cellar/libelf/0.8.13_1/lib/ -lelf")
 set(CMAKE_C_FLAGS_RELEASE "-mtune=generic -O2 -Wall -pedantic -mstackrealign -flto -fomit-frame-pointer -DNDEBUG -Wno-unknown-pragmas -fexceptions -fstack-clash-protection")
 set(CMAKE_CXX_FLAGS_RELEASE "-mtune=generic -O2 -Wall -pedantic -mstackrealign -flto -fomit-frame-pointer -DNDEBUG -Wno-unknown-pragmas -fexceptions -fstack-clash-protection")
 
-set(CMAKE_CXX_FLAGS "-funsigned-char")
+set(CMAKE_CXX_FLAGS "-funsigned-char -DHAVE_LIBELF")
 
 else()
 
